@@ -1,22 +1,16 @@
 app/bootstrap.php.cache
 
-bin/phantom-sahi.js
-
 app/config/parameters.ini
 app/phpunit.xml
 app/config/*_local.yml
 app/cache/*
 app/logs/*
-app/config/sips/param/pathfile
 
 web/bundles/*
 web/css/*
 web/js/*
 web/assets/*
 web/media/*
-
-.idea/*
-src/VPAutoBundle/Resources/public/backend/.sass-cache/*
 
 tags
 *.swp
