@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>AD A COW</h1>
+        <hr />
+            {% if cows|length < cow_limit %}
+            <form action="{{ path('_cow_add') }}" method="post" {{ form_enctype(form) }} novalidate>
+                {{ form_widget(form) }}
+                <button type="submit">Validate</button>
+                or
+                <button type="reset">Cancel</button>
+            </form>
+            {% else %}
+            <i>Cow limit reached (max {{cow_limit}})</i>
+            {% endif %}
+        <h1>LIST OF COWS</h1>
+        <hr />
+        <table border="1">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+            </tr>
+            {% for cow in cows %}
+            <tr>
+                <td>
+                    {{ cow.id }}
+                </td>
+                <td>
+                    {{ cow.name }}
+                </td>
+                <td>
+                    <form action="{{ path('_cow_delete', { 'id': cow.id }) }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

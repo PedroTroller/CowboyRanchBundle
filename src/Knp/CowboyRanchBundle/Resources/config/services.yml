@@ -1,0 +1,10 @@
+
+parameters:
+    ranch_cow_limit: 5
+
+services:
+    knp_cowboyranch.ranch:
+        class: Knp\CowboyRanchBundle\Ranch\DoctrineRanch
+        arguments:
+            - @doctrine
+            - %ranch_cow_limit%
