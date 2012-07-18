@@ -24,7 +24,6 @@ class DoctrineRanch implements RanchInterface
 
     public function getCows()
     {
-        //debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10);
         return $this->doctrine->getRepository('Knp\CowboyRanchBundle\Entity\Cow')->findAll();
     }
 
